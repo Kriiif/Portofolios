@@ -4,7 +4,6 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onNavigate, currentSection }: NavbarProps) {
-  // Daftar menu agar kodenya lebih rapi
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },

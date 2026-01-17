@@ -10,3 +10,13 @@ body {
   background-color: #0E131F;
   color: white;
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}

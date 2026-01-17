@@ -1,9 +1,10 @@
 interface NavbarProps {
   onNavigate: (section: string) => void;
   currentSection: string;
+  isScrolled?: boolean;
 }
 
-export default function Navbar({ onNavigate, currentSection }: NavbarProps) {
+export default function Navbar({ onNavigate, currentSection, isScrolled = false }: NavbarProps) {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -13,13 +14,18 @@ export default function Navbar({ onNavigate, currentSection }: NavbarProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] flex justify-center py-6 bg-transparent">
+    <nav
+      className={`fixed top-0 left-0 w-full z-[100] flex justify-center py-6 transition-all duration-300 ${isScrolled
+          ? "bg-[#0E131F]/70 backdrop-blur-md"
+          : "bg-transparent"
+        }`}
+    >
       <ul className="flex gap-6 md:gap-12 text-gray-300 font-medium text-sm md:text-base tracking-wide">
         {navItems.map((item) => (
           <li
             key={item.id}
             onClick={() => onNavigate(item.id)}
-            className={`cursor-pointer transition-colors duration-200 z-70 ${currentSection === item.id ? "text-yellow-500" : "hover:text-white"
+            className={`cursor-pointer transition-colors duration-200 ${currentSection === item.id ? "text-yellow-500" : "hover:text-white"
               }`}
           >
             {item.label}

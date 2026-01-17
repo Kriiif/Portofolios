@@ -23,7 +23,8 @@ export const Meteors = ({
     const generated = Array.from({ length: meteorCount }, (_, idx) => ({
       // Spread across 100% of container width
       position: (idx / meteorCount) * 100,
-      delay: Math.random() * 2, // Reduced from 5s to 2s for faster start
+      // Use negative delay to start meteors mid-animation (already in motion)
+      delay: -(Math.random() * 10),
       duration: Math.floor(Math.random() * 5) + 5,
     }));
     setMeteors(generated);

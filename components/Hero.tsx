@@ -10,14 +10,14 @@ interface HeroProps {
 export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section className="h-full flex flex-col justify-center items-center px-6 relative pt-10 animate-in fade-in zoom-in duration-500">
-      
+
       {/* Konten Utama */}
-      <div className="text-center gap-3 md:gap-4 flex flex-col mt-[-40px]">
+      <div className="text-center gap-3 md:gap-4 flex flex-col mt-[-40px] z-70">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-          HI, I’m Fikri.
+          HI, I'm Fikri.
         </h1>
 
-        <h2 className="text-xl md:text-3xl font-semibold text-gray-300 min-h-[40px]">
+        <h2 className="text-xl md:text-3xl font-semibold text-gray-300 min-h-[40px] z-70">
           <span className="text-yellow-500">
             <Typewriter
               words={["A Front-end Developer", "Based in Indonesia"]}

@@ -48,7 +48,7 @@ return (
         <div className="w-full max-w-6xl flex flex-col items-center">
           
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tight z-70">
               Works & Projects
             </h2>
           </div>
@@ -57,7 +57,7 @@ return (
             {projectList.map((project, index) => (
               <div 
                 key={index}
-                className="group relative bg-[#161b22] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-500/20 transition-all duration-300"
+                className="group relative bg-[#161b22] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 z-70"
               >
                 {/* Header Card */}
                 <div className="flex justify-between items-center p-4 bg-[#0d1117] border-b border-gray-700">

@@ -21,7 +21,7 @@ export default function Contacts() {
   };
 
   return (
-    <section className="h-full w-full relative flex flex-col justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-500 px-6">
+    <section className="h-full w-full relative flex flex-col justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-500 px-6 z-70">
       
       <div className="flex flex-col items-center gap-6 md:gap-8 mt-[-50px] text-center">
         

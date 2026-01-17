@@ -9,11 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.26.2",
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
-    "react-simple-typewriter": "^5.0.1"
+    "react-simple-typewriter": "^5.0.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

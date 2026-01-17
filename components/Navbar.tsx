@@ -19,9 +19,8 @@ export default function Navbar({ onNavigate, currentSection }: NavbarProps) {
           <li
             key={item.id}
             onClick={() => onNavigate(item.id)}
-            className={`cursor-pointer transition-colors duration-200 ${
-              currentSection === item.id ? "text-yellow-500" : "hover:text-white"
-            }`}
+            className={`cursor-pointer transition-colors duration-200 z-70 ${currentSection === item.id ? "text-yellow-500" : "hover:text-white"
+              }`}
           >
             {item.label}
           </li>

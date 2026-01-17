@@ -4,18 +4,24 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Skills from "@/components/Skills"; 
+import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-import Contacts from "@/components/Contacts"; // <--- 1. Import Contacts
+import Contacts from "@/components/Contacts";
+import { Meteors } from "@/components/ui/meteors";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
 
   return (
     <main className="h-screen w-screen bg-[#0E131F] text-white selection:bg-yellow-500 selection:text-black font-sans overflow-hidden">
-      
+
+      {/* Full-screen Meteors - persistent across all sections */}
+      <div className="fixed inset-0 w-screen h-screen overflow-hidden pointer-events-none z-60">
+        <Meteors number={40} />
+      </div>
+
       <Navbar currentSection={activeSection} onNavigate={setActiveSection} />
-      
+
       {activeSection === "home" && (
         <Hero onNavigate={() => setActiveSection("about")} />
       )}
@@ -25,15 +31,15 @@ export default function Home() {
       )}
 
       {activeSection === "skills" && (
-         <Skills onNavigate={() => setActiveSection("projects")} />
+        <Skills onNavigate={() => setActiveSection("projects")} />
       )}
 
       {activeSection === "projects" && (
-         <Projects onNavigate={() => setActiveSection("contacts")} />
+        <Projects onNavigate={() => setActiveSection("contacts")} />
       )}
 
       {activeSection === "contacts" && (
-         <Contacts />
+        <Contacts />
       )}
 
     </main>

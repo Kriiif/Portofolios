@@ -12,8 +12,7 @@ export default function About({ onNavigate }: AboutProps) {
       <div className="max-w-4xl text-center">
         <h3 className="text-2xl md:text-4xl font-bold leading-relaxed text-gray-200 tracking-wide">
           I am currently an active CS student at State University of Jakarta. I
-          enjoy creating web apps with React JS and Next JS. And I have a good
-          taste for UI/UX design.
+          enjoy creating web apps and I'm passionate in UI/UX design.
         </h3>
       </div>
 

@@ -49,8 +49,8 @@ export const Meteors = ({
             className,
           )}
           style={{
-            top: "-40px",
-            left: meteor.position + "%",
+            top: "0",
+            right: meteor.position + "%",
             animationDelay: meteor.delay + "s",
             animationDuration: meteor.duration + "s",
           }}

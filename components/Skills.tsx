@@ -36,7 +36,7 @@ export default function Skills({ onNavigate }: SkillsProps) {
       {/* Judul */}
       <div className="text-center mb-16 mt-[-40px]">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tight">
-          Techs & Stacks
+          Tech Stack
         </h2>
       </div>
 

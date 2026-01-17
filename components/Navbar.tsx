@@ -13,7 +13,7 @@ export default function Navbar({ onNavigate, currentSection }: NavbarProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-center py-6 bg-[#0E131F]/90 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 w-full z-[100] flex justify-center py-6 bg-transparent">
       <ul className="flex gap-6 md:gap-12 text-gray-300 font-medium text-sm md:text-base tracking-wide">
         {navItems.map((item) => (
           <li

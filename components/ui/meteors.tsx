@@ -23,7 +23,7 @@ export const Meteors = ({
     const generated = Array.from({ length: meteorCount }, (_, idx) => ({
       // Spread across 100% of container width
       position: (idx / meteorCount) * 100,
-      delay: Math.random() * 5,
+      delay: Math.random() * 2, // Reduced from 5s to 2s for faster start
       duration: Math.floor(Math.random() * 5) + 5,
     }));
     setMeteors(generated);
@@ -35,11 +35,7 @@ export const Meteors = ({
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div>
       {meteors.map((meteor, idx) => (
         <span
           key={"meteor" + idx}
@@ -55,6 +51,6 @@ export const Meteors = ({
           }}
         />
       ))}
-    </motion.div>
+    </div>
   );
 };

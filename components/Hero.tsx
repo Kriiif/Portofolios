@@ -12,12 +12,12 @@ export default function Hero({ onNavigate }: HeroProps) {
     <section className="h-full flex flex-col justify-center items-center px-6 relative pt-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
       {/* Konten Utama */}
-      <div className="text-center gap-3 md:gap-4 flex flex-col mt-[-40px] z-70">
+      <div className="text-center gap-3 md:gap-4 flex flex-col -mt-10 z-70">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-          Hi, I'm Fikri.
+          Hi, I&apos;m Fikri.
         </h1>
 
-        <h2 className="text-xl md:text-3xl font-semibold text-gray-300 min-h-[40px] z-70">
+        <h2 className="text-xl md:text-3xl font-semibold text-gray-300 min-h-10 z-70">
           <span className="text-yellow-500">
             <Typewriter
               words={["A Front-end Developer", "Based in Indonesia"]}

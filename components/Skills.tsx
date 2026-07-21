@@ -34,7 +34,7 @@ export default function Skills({ onNavigate }: SkillsProps) {
     <section className="h-full flex flex-col justify-center items-center px-6 relative animate-in fade-in slide-in-from-bottom-4 duration-500 z-70">
       
       {/* Judul */}
-      <div className="text-center mb-16 mt-[-40px]">
+      <div className="text-center mb-16 -mt-10">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tight">
           Tech Stack
         </h2>

@@ -8,6 +8,7 @@ export default function SocialIcons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-gray-400 transition-colors text-2xl"
+        aria-label="LinkedIn"
       >
         <FaLinkedin />
       </a>
@@ -16,6 +17,7 @@ export default function SocialIcons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-gray-400 transition-colors text-2xl"
+        aria-label="Github"
       >
         <FaGithub />
       </a>
@@ -24,6 +26,7 @@ export default function SocialIcons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-gray-400 transition-colors text-2xl"
+        aria-label="Instagram"
       >
         <FaInstagram />
       </a>
@@ -32,6 +35,7 @@ export default function SocialIcons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-gray-400 transition-colors text-2xl"
+        aria-label="Discord"
       >
         <FaDiscord />
       </a>

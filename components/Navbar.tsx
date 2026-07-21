@@ -15,7 +15,7 @@ export default function Navbar({ onNavigate, currentSection, isScrolled = false 
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] flex justify-center py-6 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 w-full z-100 flex justify-center py-6 transition-all duration-300 ${isScrolled
           ? "bg-[#0E131F]/70 backdrop-blur-md"
           : "bg-transparent"
         }`}

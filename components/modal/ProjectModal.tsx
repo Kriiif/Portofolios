@@ -10,6 +10,7 @@ export interface ProjectTech {
 
 export interface ProjectData {
   title: string;
+  slug?: string;
   subtitle?: string;
   image?: string;
   details?: string[];

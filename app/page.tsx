@@ -21,6 +21,9 @@ export default function Home({ initialSection = "home" }: HomeProps) {
 
   // Update URL when section changes
   useEffect(() => {
+    if (activeSection === "projects" && window.location.pathname.startsWith("/projects/")) {
+      return;
+    }
     const newPath = activeSection === "home" ? "/" : `/${activeSection}`;
     if (window.location.pathname !== newPath) {
       window.history.pushState(null, "", newPath);
@@ -30,7 +33,8 @@ export default function Home({ initialSection = "home" }: HomeProps) {
   // Handle browser back/forward navigation
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.replace("/", "");
+      const pathname = window.location.pathname;
+      const path = pathname.split("/")[1];
       if (path && validSections.includes(path)) {
         setActiveSection(path);
       } else {

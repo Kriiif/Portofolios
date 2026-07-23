@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   SiReact,
   SiTailwindcss,
@@ -20,14 +20,10 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
     null
   );
 
-  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
-    const scrollTop = e.currentTarget.scrollTop;
-    onScroll?.(scrollTop > 10);
-  };
-
   const projectList: ProjectData[] = [
     {
       title: "Gaskeeun Project",
+      slug: "gaskeeun-project",
       subtitle: "Sport Venue Booking & Management",
       techs: [
         { icon: SiReact, color: "text-cyan-400" },
@@ -44,6 +40,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
     },
     {
       title: "SIP Project",
+      slug: "sip-project",
       subtitle: "Library Information System & Book Management",
       techs: [
         { icon: SiNextdotjs, color: "text-white" },
@@ -59,6 +56,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
     },
     {
       title: "Hafrin Coffee",
+      slug: "hafrin-coffee",
       subtitle: "E-Commerce & Digital Menu Application",
       techs: [
         { icon: SiNextdotjs, color: "text-white" },
@@ -73,6 +71,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
     },
     {
       title: "SUGAR BARU",
+      slug: "sugar-baru",
       subtitle: "Teacher Candidate Assessment & Selection System",
       techs: [
         { icon: SiReact, color: "text-cyan-400"},
@@ -89,6 +88,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
     },
     {
       title: "SIPP LPPM UNJ",
+      slug: "sipp-lppm-unj",
       subtitle: "Research & Community Service Information System",
       techs: [
         { icon: SiVuedotjs, color: "text-green-500"},
@@ -105,6 +105,63 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
       ]
     }
   ];
+
+  // Helper to extract project slug from current URL (pathname or search query)
+  const getSlugFromUrl = (): string | null => {
+    if (typeof window === "undefined") return null;
+
+    // Check query param first e.g. /projects?project=gaskeeun-project
+    const searchParams = new URLSearchParams(window.location.search);
+    const querySlug = searchParams.get("project");
+    if (querySlug) return querySlug;
+
+    // Check pathname
+    const pathname = window.location.pathname;
+    if (pathname.startsWith("/projects/")) {
+      const slug = pathname.replace("/projects/", "").replace(/\/$/, "");
+      return slug || null;
+    }
+
+    return null;
+  };
+
+  // Sync selected project with URL on mount & browser back/forward
+  useEffect(() => {
+    const syncProjectFromUrl = () => {
+      const slug = getSlugFromUrl();
+      if (slug) {
+        const found = projectList.find(
+          (p) =>
+            p.slug === slug ||
+            p.title.toLowerCase().replace(/[^a-z0-9]/g, "-") === slug
+        );
+        setSelectedProject(found || null);
+      } else {
+        setSelectedProject(null);
+      }
+    };
+
+    syncProjectFromUrl();
+    window.addEventListener("popstate", syncProjectFromUrl);
+    return () => window.removeEventListener("popstate", syncProjectFromUrl);
+  }, []);
+
+  const handleOpenProject = (project: ProjectData) => {
+    setSelectedProject(project);
+    if (project.slug) {
+      window.history.pushState(null, "", `/projects/${project.slug}`);
+    }
+  };
+
+  const handleCloseProject = () => {
+    setSelectedProject(null);
+    window.history.pushState(null, "", "/projects");
+  };
+
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const scrollTop = e.currentTarget.scrollTop;
+    onScroll?.(scrollTop > 10);
+  };
 
   return (
     <>
@@ -154,7 +211,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
                     />
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button
-                        onClick={() => setSelectedProject(project)}
+                        onClick={() => handleOpenProject(project)}
                         className="px-6 py-2 bg-[#1F2937] text-white text-sm font-semibold rounded-full border border-gray-500 hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
                       >
                         More Info
@@ -188,7 +245,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
       {/* PROJECT DETAIL MODAL */}
       <ProjectModal
         isOpen={Boolean(selectedProject)}
-        onClose={() => setSelectedProject(null)}
+        onClose={handleCloseProject}
         project={selectedProject}
       />
     </>

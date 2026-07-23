@@ -21,11 +21,13 @@ export default function Home({ initialSection = "home" }: HomeProps) {
 
   // Update URL when section changes
   useEffect(() => {
-    if (activeSection === "projects" && window.location.pathname.startsWith("/projects/")) {
+    const pathname = window.location.pathname;
+    const search = window.location.search;
+    if (activeSection === "projects" && (pathname.startsWith("/projects/") || search.includes("project="))) {
       return;
     }
     const newPath = activeSection === "home" ? "/" : `/${activeSection}`;
-    if (window.location.pathname !== newPath) {
+    if (pathname !== newPath) {
       window.history.pushState(null, "", newPath);
     }
   }, [activeSection]);

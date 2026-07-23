@@ -2,8 +2,11 @@ import {
   SiReact,
   SiTailwindcss,
   SiNextdotjs,
+  SiLaravel,
+  SiVuedotjs,
+  SiNuxtdotjs,
 } from "react-icons/si";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./layout/SocialIcons";
 
 interface ProjectsProps {
   onNavigate: () => void;
@@ -24,7 +27,6 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
         { icon: SiTailwindcss, color: "text-cyan-500" }
       ],
       image: "./gaskeeun.jpg",
-      link: "https://github.com/Kriiif/GaskeeunProject",
     },
     {
       title: "SIP Project",
@@ -33,7 +35,6 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
         { icon: SiTailwindcss, color: "text-cyan-500" }
       ],
       image: "./sip.jpg",
-      link: "https://sipp.eatzy.web.id/",
     },
     {
       title: "Hafrin Coffee",
@@ -42,8 +43,25 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
         { icon: SiTailwindcss, color: "text-cyan-500" }
       ],
       image: "./hafrin.jpg",
-      link: "https://hafrin-coffee.vercel.app/",
     },
+    {
+      title: "SUGAR BARU",
+      techs: [
+        { icon: SiReact, color: "text-cyan-400"},
+        { icon: SiTailwindcss, color: "text-cyan-500"},
+        { icon: SiLaravel, color: "text-red-500"},
+      ],
+      image: "./sugar.png",
+    },
+    {
+      title: "SIPP LPPM UNJ",
+      techs: [
+        { icon: SiVuedotjs, color: "text-green-500"},
+        { icon: SiNuxtdotjs, color: "text-green-500"},
+        { icon: SiTailwindcss, color: "text-cyan-500"},
+      ],
+      image: "./sipp.png",
+    }
   ];
 
   return (
@@ -74,7 +92,7 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
                     {project.title}
                   </h3>
                   <div className="flex gap-3 text-xl">
-                    {project.techs.map((tech, idx) => (
+                    {project.techs && project.techs.map((tech, idx) => (
                       <tech.icon
                         key={idx}
                         className={`${tech.color}`}
@@ -94,7 +112,6 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
                       className="px-6 py-2 bg-[#1F2937] text-white text-sm font-semibold rounded-full border border-gray-500 hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
-                      onClick={() => window.open(project.link, '_blank')}
                     >
                       More Info
                     </button>

@@ -8,9 +8,12 @@ import {
   SiMysql, 
   SiGit, 
   SiJavascript, 
-  SiDocker 
+  SiDocker, 
+  SiVuedotjs,
+  SiNuxtdotjs,
+  SiLaravel
 } from "react-icons/si";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./layout/SocialIcons";
 
 interface SkillsProps {
   onNavigate: () => void;
@@ -21,12 +24,15 @@ export default function Skills({ onNavigate }: SkillsProps) {
     { icon: SiHtml5, color: "text-orange-600", name: "HTML" },
     { icon: SiCss3, color: "text-blue-600", name: "CSS" },
     { icon: SiTailwindcss, color: "text-cyan-400", name: "Tailwind" },
+    { icon: SiJavascript, color: "text-yellow-400", name: "JavaScript" },
     { icon: SiTypescript, color: "text-blue-500", name: "TypeScript" },
     { icon: SiReact, color: "text-cyan-300", name: "React" },
     { icon: SiNextdotjs, color: "text-white", name: "Next.js" },
-    { icon: SiMysql, color: "text-blue-400", name: "MySQL" },
+    { icon: SiVuedotjs, color: "text-green-500", name: "Vue.js" },
+    { icon: SiNuxtdotjs, color: "text-green-500", name: "Nuxt.js"},
+    { icon: SiLaravel, color: "text-red-500", name: "Laravel"},
     { icon: SiGit, color: "text-red-500", name: "Git" },
-    { icon: SiJavascript, color: "text-yellow-400", name: "JavaScript" },
+    { icon: SiMysql, color: "text-blue-400", name: "MySQL" },
     { icon: SiDocker, color: "text-blue-500", name: "Docker" },
   ];
 

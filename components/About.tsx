@@ -1,4 +1,4 @@
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./layout/SocialIcons";
 
 interface AboutProps {
   onNavigate: () => void;

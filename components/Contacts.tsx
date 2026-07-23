@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { IoMdMail } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./layout/SocialIcons";
 
 export default function Contacts() {
   const [isCopied, setIsCopied] = useState(false);

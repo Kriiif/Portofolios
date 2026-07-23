@@ -1,7 +1,7 @@
 "use client";
 
 import { Typewriter } from "react-simple-typewriter";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./layout/SocialIcons";
 
 interface HeroProps {
   onNavigate: () => void;

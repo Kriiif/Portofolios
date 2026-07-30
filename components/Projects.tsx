@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   SiReact,
   SiTailwindcss,
@@ -15,96 +16,96 @@ interface ProjectsProps {
   onScroll?: (isScrolled: boolean) => void;
 }
 
+const projectList: ProjectData[] = [
+  {
+    title: "Gaskeeun Project",
+    slug: "gaskeeun-project",
+    subtitle: "Sport Venue Booking & Management",
+    techs: [
+      { icon: SiReact, color: "text-cyan-400" },
+      { icon: SiTailwindcss, color: "text-cyan-500" }
+    ],
+    image: "/gaskeeun.jpg",
+    details: [
+      "This Project is one of the mandatory assignments for my Management Software Engineering Course.",
+      "Integrated interactive sports venue booking platform with real-time slot availability.",
+      "Streamlined user reservation workflow and venue schedule management system.",
+      "Built responsive UI components with React and Tailwind CSS for seamless mobile and desktop experience.",
+      "Implemented user authentication, booking history, and venue filtering by sport type and location."
+    ]
+  },
+  {
+    title: "SIP Project",
+    slug: "sip-project",
+    subtitle: "Library Information System & Book Management",
+    techs: [
+      { icon: SiNextdotjs, color: "text-white" },
+      { icon: SiTailwindcss, color: "text-cyan-500" }
+    ],
+    image: "/sip.jpg",
+    details: [
+      "This Project is one of the mandatory assignments for my Management Information Systems Course.",
+      "Comprehensive information system for streamlined enterprise workflow and data tracking.",
+      "Developed dynamic dashboards with server-side rendering using Next.js for high performance.",
+      "Integrated role-based access control and detailed activity logging."
+    ]
+  },
+  {
+    title: "Hafrin Coffee",
+    slug: "hafrin-coffee",
+    subtitle: "E-Commerce & Digital Menu Application",
+    techs: [
+      { icon: SiNextdotjs, color: "text-white" },
+      { icon: SiTailwindcss, color: "text-cyan-500" }
+    ],
+    image: "/hafrin.jpg",
+    details: [
+      "Modern web application for coffee shop ordering, digital menu catalog, and brand showcase.",
+      "Designed intuitive customer order flow with custom menu options and item customization.",
+      "Optimized page load speed and SEO with Next.js App Router."
+    ]
+  },
+  {
+    title: "SUGAR BARU",
+    slug: "sugar-baru",
+    subtitle: "Teacher Candidate Assessment & Selection System",
+    techs: [
+      { icon: SiReact, color: "text-cyan-400"},
+      { icon: SiTailwindcss, color: "text-cyan-500"},
+      { icon: SiLaravel, color: "text-red-500"},
+    ],
+    image: "/sugar.png",
+    details: [
+      "Comprehensive web-based platform designed to streamline the end-to-end selection and assessment processes for prospective school teachers.",
+      "Digitalizes multi-stage candidate evaluations, encompassing document screenings, interviews, psychology tests, religious assessment, English proficiency, and microteaching assessments.",
+      "Features role-based dashboards to manage operational workflows, candidate scheduling, and dynamic assessment rubrics for administrators and school leadership.",
+      "Designed custom analytical widgets and exportable data tables for management reporting."
+    ]
+  },
+  {
+    title: "SIPP LPPM UNJ",
+    slug: "sipp-lppm-unj",
+    subtitle: "Research & Community Service Information System",
+    techs: [
+      { icon: SiVuedotjs, color: "text-green-500"},
+      { icon: SiNuxtdotjs, color: "text-green-500"},
+      { icon: SiTailwindcss, color: "text-cyan-500"},
+    ],
+    image: "/sipp.png",
+    details: [
+      "Academic web portal for managing research proposals, funding, and community service projects at UNJ.",
+      "Facilitates the full lifecycle of academic proposals, from initial submission and reviewer assignments to field monitoring and evaluation (Monev).",
+      "Equipped with automated scoring mechanisms, progress tracking, and comprehensive data reporting to support institutional research governance.",
+      "Architected using Nuxt.js and Vue.js with SSR support for public archive accessibility.",
+      "Implemented multi-stage proposal submission, peer review workflow, and administrative dashboards."
+    ]
+  }
+];
+
 export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
     null
   );
-
-  const projectList: ProjectData[] = [
-    {
-      title: "Gaskeeun Project",
-      slug: "gaskeeun-project",
-      subtitle: "Sport Venue Booking & Management",
-      techs: [
-        { icon: SiReact, color: "text-cyan-400" },
-        { icon: SiTailwindcss, color: "text-cyan-500" }
-      ],
-      image: "./gaskeeun.jpg",
-      details: [
-        "This Project is one of the mandatory assignments for my Management Software Engineering Course.",
-        "Integrated interactive sports venue booking platform with real-time slot availability.",
-        "Streamlined user reservation workflow and venue schedule management system.",
-        "Built responsive UI components with React and Tailwind CSS for seamless mobile and desktop experience.",
-        "Implemented user authentication, booking history, and venue filtering by sport type and location."
-      ]
-    },
-    {
-      title: "SIP Project",
-      slug: "sip-project",
-      subtitle: "Library Information System & Book Management",
-      techs: [
-        { icon: SiNextdotjs, color: "text-white" },
-        { icon: SiTailwindcss, color: "text-cyan-500" }
-      ],
-      image: "./sip.jpg",
-      details: [
-        "This Project is one of the mandatory assignments for my Management Information Systems Course.",
-        "Comprehensive information system for streamlined enterprise workflow and data tracking.",
-        "Developed dynamic dashboards with server-side rendering using Next.js for high performance.",
-        "Integrated role-based access control and detailed activity logging."
-      ]
-    },
-    {
-      title: "Hafrin Coffee",
-      slug: "hafrin-coffee",
-      subtitle: "E-Commerce & Digital Menu Application",
-      techs: [
-        { icon: SiNextdotjs, color: "text-white" },
-        { icon: SiTailwindcss, color: "text-cyan-500" }
-      ],
-      image: "./hafrin.jpg",
-      details: [
-        "Modern web application for coffee shop ordering, digital menu catalog, and brand showcase.",
-        "Designed intuitive customer order flow with custom menu options and item customization.",
-        "Optimized page load speed and SEO with Next.js App Router."
-      ]
-    },
-    {
-      title: "SUGAR BARU",
-      slug: "sugar-baru",
-      subtitle: "Teacher Candidate Assessment & Selection System",
-      techs: [
-        { icon: SiReact, color: "text-cyan-400"},
-        { icon: SiTailwindcss, color: "text-cyan-500"},
-        { icon: SiLaravel, color: "text-red-500"},
-      ],
-      image: "./sugar.png",
-      details: [
-        "Comprehensive web-based platform designed to streamline the end-to-end selection and assessment processes for prospective school teachers.",
-        "Digitalizes multi-stage candidate evaluations, encompassing document screenings, interviews, psychology tests, religious assessment, English proficiency, and microteaching assessments.",
-        "Features role-based dashboards to manage operational workflows, candidate scheduling, and dynamic assessment rubrics for administrators and school leadership.",
-        "Designed custom analytical widgets and exportable data tables for management reporting."
-      ]
-    },
-    {
-      title: "SIPP LPPM UNJ",
-      slug: "sipp-lppm-unj",
-      subtitle: "Research & Community Service Information System",
-      techs: [
-        { icon: SiVuedotjs, color: "text-green-500"},
-        { icon: SiNuxtdotjs, color: "text-green-500"},
-        { icon: SiTailwindcss, color: "text-cyan-500"},
-      ],
-      image: "./sipp.png",
-      details: [
-        "Academic web portal for managing research proposals, funding, and community service projects at UNJ.",
-        "Facilitates the full lifecycle of academic proposals, from initial submission and reviewer assignments to field monitoring and evaluation (Monev).",
-        "Equipped with automated scoring mechanisms, progress tracking, and comprehensive data reporting to support institutional research governance.",
-        "Architected using Nuxt.js and Vue.js with SSR support for public archive accessibility.",
-        "Implemented multi-stage proposal submission, peer review workflow, and administrative dashboards."
-      ]
-    }
-  ];
 
   // Helper to extract project slug from current URL (pathname or search query)
   const getSlugFromUrl = (): string | null => {
@@ -204,10 +205,12 @@ export default function Projects({ onNavigate, onScroll }: ProjectsProps) {
 
                   {/* Image & Overlay */}
                   <div className="relative h-48 w-full overflow-hidden">
-                    <img
-                      src={project.image}
+                    <Image
+                      src={project.image || ""}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button

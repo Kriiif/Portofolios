@@ -13,8 +13,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kriiif.pages.dev"),
   title: "Fikri's Portfolio",
-  description: "",
+  description:
+    "Portfolio of Muhammad Fikri Firmansyah - Front-end Developer & CS Student passionate in UI/UX design and modern web development.",
+  keywords: [
+    "Muhammad Fikri Firmansyah",
+    "Fikri",
+    "Portfolio",
+    "Front-end Developer",
+    "Web Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "UI/UX",
+  ],
+  authors: [
+    {
+      name: "Muhammad Fikri Firmansyah",
+      url: "https://kriiif.pages.dev",
+    },
+  ],
+  creator: "Muhammad Fikri Firmansyah",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://kriiif.pages.dev",
+    siteName: "Fikri's Portfolio",
+    title: "Fikri's Portfolio",
+    description:
+      "Portfolio of Muhammad Fikri Firmansyah - Front-end Developer & CS Student passionate in UI/UX design and modern web development.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Fikri's Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fikri's Portfolio",
+    description:
+      "Portfolio of Muhammad Fikri Firmansyah - Front-end Developer & CS Student passionate in UI/UX design and modern web development.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

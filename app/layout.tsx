@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kriiif.pages.dev"),
+  metadataBase: new URL("https://kriiif.vercel.app"),
   title: "Fikri's Portfolio",
   description:
     "Portfolio of Muhammad Fikri Firmansyah - Front-end Developer & CS Student passionate in UI/UX design and modern web development.",
@@ -32,16 +32,16 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Muhammad Fikri Firmansyah",
-      url: "https://kriiif.pages.dev",
+      url: "https://kriiif.vercel.app",
     },
   ],
   alternates: {
-    canonical: "https://kriiif.pages.dev/",
+    canonical: "https://kriiif.vercel.app/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kriiif.pages.dev/",
+    url: "https://kriiif.vercel.app/",
     siteName: "Fikri's Portfolio",
     title: "Fikri's Portfolio",
     description:

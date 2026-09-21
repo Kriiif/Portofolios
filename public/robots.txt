@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kriiif.pages.dev/
+Sitemap: https://kriiif.vercel.app/sitemap.xml

@@ -35,11 +35,13 @@ export const metadata: Metadata = {
       url: "https://kriiif.pages.dev",
     },
   ],
-  creator: "Muhammad Fikri Firmansyah",
+  alternates: {
+    canonical: "https://kriiif.pages.dev/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kriiif.pages.dev",
+    url: "https://kriiif.pages.dev/",
     siteName: "Fikri's Portfolio",
     title: "Fikri's Portfolio",
     description:
@@ -49,6 +51,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Fikri's Portfolio Preview",
       },
     ],
